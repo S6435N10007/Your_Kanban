@@ -8,9 +8,10 @@
     $pic2 = $_FILES['pic2']['name'];
     $pic3 = $_FILES['pic3']['name'];
     include('includes/connect.php');
-    $sqlu = "SELECT count(p_name) FROM tb_product WHERE p_name='$name'" ;
+    $sqlu = "SELECT * FROM tb_product WHERE p_name='$name'" ;
     $resultu = mysqli_query($conn,$sqlu);
-    if( $resultu > 0 ){
+    $num_rows = mysqli_num_rows($resultu);
+    if( $num_rows > 0 ){
         echo "<script>alert('Already has this name')</script>";
         echo "<script>window.location='add_product_form.php'</script>";
     }else{

@@ -10,9 +10,10 @@
     $address = $_POST['address'];
     $status = "user";
     $pass = hash('sha512',$pass);
-    $sqlu = "SELECT count(m_email) FROM tb_member WHERE m_email='$email'" ;
+    $sqlu = "SELECT * FROM tb_member WHERE m_email='$email'" ;
     $resultu = mysqli_query($conn,$sqlu);
-    if( $resultu > 0 ){
+    $num_rows = mysqli_num_rows($resultu);
+    if( $num_rows > 0 ){
         echo "<script>alert('There is already a user with that email!')</script>";
         echo "<script>window.location='register.php'</script>";
     }else{
