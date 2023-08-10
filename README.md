@@ -21,7 +21,7 @@
     <td>
       <img src="https://i.ibb.co/BZr76TH/755.png">
     </td>
-  <tr>
+  </tr>
 </table>
 
 ***
