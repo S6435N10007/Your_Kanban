@@ -7,7 +7,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Koban</title>
+        <title>Your Kanban</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="images/favicon.png">
@@ -37,8 +37,8 @@
                                     while($row = mysqli_fetch_array($Userresult))
                                     {
                                     ?>
-                                    <li><a href="#"><i class="pe-7s-person"></i><span><?php echo $row['m_name'];?></span></a></li>
-                                    <li><a href="#"><i ></i><span><?php echo $row['m_surname'];?></span></a></li>
+                                    <li><a href="my_account.php"><i class="pe-7s-person"></i><span><?php echo $row['m_name'];?></span></a></li>
+                                    <li><a href="my_account.php"><i ></i><span><?php echo $row['m_surname'];?></span></a></li>
                             </ul>
                         </div>
                     </div>        
@@ -92,7 +92,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.php?page=1"><b>K</b>oban</a>
+                        <a class="navbar-brand" href="index.php?page=1"><b>Y</b>our <b>K</b>anban</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -100,7 +100,6 @@
                         <ul class="nav navbar-nav">
                             <li><a href="index.php">Home</a></li>
                             <li><a href="shop.php?page=1">shop</a></li>
-                            <li><a href="aboutus.php">About Us</a></li>
                             <li><a href="contact.php">Contact Us</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->

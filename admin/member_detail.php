@@ -27,76 +27,86 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                Product Detail
+                                Member Details
                             </div>
                             <div class="card-body">
                                 <div class="container">
-                                    <form class="form-horizontal" role="form" method="POST" action="update_product.php" enctype="multipart/form-data">
-
+                                    <form class="form-horizontal" role="form" method="POST" action="update_member.php">
                                         <?php
-                                        $sql = "SELECT p.* , c.cat_name
-                                                FROM `tb_product` p
-                                                INNER JOIN tb_category c 
-                                                ON p.cat_id = c.cat_id
-                                                WHERE p_no = '$id'";
+                                        $sql = "SELECT *
+                                                FROM tb_member 
+                                                WHERE m_no = '$id'";
                                         $result = mysqli_query($conn, $sql);
                                         while($row = mysqli_fetch_array($result))
                                         {
                                         ?>
                                         <div class="form-group mb-3">
-                                            <label for="productname" class="col-sm-3 control-label">Product ID</label>
+                                            <label for="productname" class="col-sm-3 control-label">Member ID</label>
                                             <div class="col-sm-9">
-                                                <input type="text" id="id" name="id" class="form-control" value="<?php echo $row['p_no']; ?>" disabled>
-                                                <input hidden name="id" value="<?php echo $row['p_no']; ?>"/>
+                                                <input type="text" id="id" name="id" class="form-control" value="<?php echo $row['m_no']; ?>" disabled>
+                                                <input hidden name="id" value="<?php echo $row['m_no']; ?>"/>
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="productname" class="col-sm-3 control-label">Product Name</label>
+                                            <label for="email" class="col-sm-3 control-label">Email</label>
                                             <div class="col-sm-9">
-                                                <input type="text" id="name" name="name" placeholder="Product Name" class="form-control" value="<?php echo $row['p_name']; ?>" autofocus required>
+                                                <input type="email" id="email" name="email" placeholder="Email" class="form-control" value="<?php echo $row['m_email']; ?>"  autofocus required>
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="productname" class="col-sm-3 control-label">Product Type</label>
+                                            <label for="password" class="col-sm-3 control-label">Password</label>
                                             <div class="col-sm-9">
-                                                <select name="protype" required>
-                                                    <option value="1" <?=$row['cat_id'] == '1' ? ' selected="selected"' : '';?>>Face</option>
-                                                    <option value="2" <?=$row['cat_id'] == '2' ? ' selected="selected"' : '';?>>Lip</option>
-                                                    <option value="3" <?=$row['cat_id'] == '3' ? ' selected="selected"' : '';?>>Eye</option>
-                                                    <option value="4" <?=$row['cat_id'] == '4' ? ' selected="selected"' : '';?>>beauty accessories</option>
-                                                    <option value="5" <?=$row['cat_id'] == '5' ? ' selected="selected"' : '';?>>Nail</option>
-                                                    <option value="6" <?=$row['cat_id'] == '6' ? ' selected="selected"' : '';?>>fragrance</option>
-                                                </select>  
+                                                <input type="password" id="password" name="password" placeholder="Password" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="detail" class="col-sm-3 control-label">Detail</label>
-                                            <div class="col-sm-9">
-                                                <textarea row="5" id="detail" name="detail" placeholder="Detail" class="form-control" required><?php echo $row['p_detail']; ?></textarea>
+                                            <label class="control-label col-sm-3">Permission</label>
+                                            <div class="col-sm-6">
+                                                <div class="row">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="userRadio" value="user" name="permission" required <?=$row['m_status'] == 'user' ? ' checked="checked"' : '';?>>User
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="adminRadio" value="admin" name="permission" <?=$row['m_status'] == 'admin' ? ' checked="checked"' : '';?>>Admin
+                                                        </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="Price" class="col-sm-3 control-label">Price</label>
+                                            <label for="Name" class="col-sm-3 control-label">Name</label>
                                             <div class="col-sm-9">
-                                                <input type="text" id="price" name="price" placeholder="price" class="form-control" value="<?php echo $row['p_price']; ?>" required>
+                                                <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<?php echo $row['m_name']; ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="pictureMain" class="col-sm-3 control-label">Picture(Main)</label>
+                                            <label for="Surname" class="col-sm-3 control-label">Surname</label>
                                             <div class="col-sm-9">
-                                                <input type="file" id="picmain" name="picmain" class="form-control" value="<?php echo $row['p_pic_main']?>">
+                                                <input type="text" id="surname" name="surname" placeholder="Surname" class="form-control" value="<?php echo $row['m_surname']; ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="picture2" class="col-sm-3 control-label">Picture(2)</label>
-                                            <div class="col-sm-9">
-                                                <input type="file" id="pic2" name="pic2" class="form-control" value="<?php echo $row['p_pic_2']?>">
+                                            <label class="control-label col-sm-3">Gender</label>
+                                            <div class="col-sm-6">
+                                                <div class="row">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="femaleRadio" value="female" name="gender" required <?=$row['m_gender'] == 'female' ? ' checked="checked"' : '';?>>Female
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="maleRadio" value="male" name="gender" <?=$row['m_gender'] == 'male' ? ' checked="checked"' : '';?>>Male
+                                                        </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label for="picture3" class="col-sm-3 control-label">Picture(3)</label>
+                                            <label for="Phone" class="col-sm-3 control-label">Phone</label>
                                             <div class="col-sm-9">
-                                                <input type="file" id="pic3" name="pic3" class="form-control" value="<?php echo $row['p_pic_3']?>">
+                                                <input type="number" oninput="maxLengthCheck(this)" maxLength="10" max="9999999999" id="phone" name="phone" placeholder="Phone" class="form-control" min="10" max="10" value="<?php echo $row['m_tel']; ?>" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label for="Address" class="col-sm-3 control-label">Address</label>
+                                            <div class="col-sm-9">
+                                                <textarea row="5" id="address" name="address" placeholder="Address" class="form-control" required><?php echo $row['m_address']; ?></textarea>
                                             </div>
                                         </div>
                                         <?php
@@ -126,6 +136,14 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
-    </body>
+<script>
+  function maxLengthCheck(object)
+  {
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength)
+  }
+</script>    
+        </body>
 </html>
+
 

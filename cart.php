@@ -62,7 +62,7 @@
                                 <tr>
                                     <td>
                                         <div class="product-item">
-                                            <a class="product-thumb" href="#"><img src="admin/product_image/<?php echo $row['p_pic_main'];?>" alt="Product"></a>
+                                            <a class="product-thumb" href="product.php?id=<?php echo $row_p['p_no'];?>&cat_id=<?php echo $row_p['cat_id'];?>"><img src="admin/product_image/<?php echo $row_p['p_pic_main'];?>" alt="Product"></a>
                                             <div class="product-info">
                                                 <h4 class="cart-product-title"><a href="product.php?id=<?php echo $row_p['p_no'];?>&cat_id=<?php echo $row_p['cat_id'];?>"><?php echo $row_p['p_name'];?></a></h4>
                                             </div>
@@ -129,7 +129,7 @@
                         <div class="alert alert-success mt-3" h4 role="alert">
                             Payment
                         </div>
-                        <form>
+                        <!-- <form> -->
                             <div class="row">
                                 <input type="radio" name="payment" id="credit" value="credit" checked/>
                                 <label for="credit">Credit Card</label>
@@ -138,7 +138,7 @@
                                 <input type="radio" name="payment" id="paypal" value="paypal"/>
                                 <label for="paypal">PayPal</label>
                             </div>
-                        </form>
+                        <!-- </form> -->
                          Name on card:
                         <input type="text" name="card_name" class="form-control"  placeholder="Name" VALUE="">
                         Card number :

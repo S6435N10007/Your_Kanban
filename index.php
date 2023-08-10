@@ -33,20 +33,17 @@
                     //ข้อมูลมาแสดงผล
                     ?>
                     <div class="col-md-3 col-sm-6 col-xs-12 <?php echo $row['cat_id'];?> featured-items isotope-item">
-                        <div class="product-item"><!--Product Begin-->
-                            <img src="admin/product_image/<?php echo $row['p_pic_main'];?>" class="img-responsive" width="255" height="322" alt="">
-                            <div class="product-hover">
-                                <div class="product-meta">
-                                    <a href="product.php?id=<?php echo $row['p_no'];?>&cat_id=<?php echo $row['cat_id'];?>"><i class="pe-7s-cart"></i>See Detail</a>
+                        <a href="product.php?id=<?php echo $row['p_no'];?>&cat_id=<?php echo $row['cat_id'];?>">
+                            <div class="product-item"><!--Product Begin-->
+                                <img src="admin/product_image/<?php echo $row['p_pic_main'];?>" class="img-responsive" width="255" height="322" alt="">
+                                <div class="product-title">
+                                    
+                                        <h3><?php echo $row['p_name'];?></h3>
+                                        <span><?php echo $row['p_price'];?> ฿</span>
+                                    
                                 </div>
-                            </div>
-                            <div class="product-title">
-                                <a href="product.php?id=<?php echo $row['p_no'];?>&cat_id=<?php echo $row['cat_id'];?>">
-                                    <h3><?php echo $row['p_name'];?></h3>
-                                    <span><?php echo $row['p_price'];?> ฿</span>
-                                </a>
-                            </div>
-                        </div><!--Product End-->
+                            </div><!--Product End-->
+                        </a>
                     </div>
                     <?php
                     }

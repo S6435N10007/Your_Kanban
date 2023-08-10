@@ -43,7 +43,7 @@
                 <div class="form-group">
                     <label for="firstName" class="col-sm-3 control-label">Phone</label>
                     <div class="col-sm-9">
-                        <input type="tel" oninput="maxLengthCheck(this)" maxLength="10" max="9999999999" id="phone" name="phone" placeholder="Phone" class="form-control" min="10" max="10" required>
+                        <input type="number" oninput="maxLengthCheck(this)" maxLength="10" max="9999999999" id="phone" name="phone" placeholder="Phone" class="form-control" min="10" max="10" required>
                     </div>
                 </div>
                 <div class="form-group">

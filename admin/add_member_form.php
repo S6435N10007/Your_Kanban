@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Koban</title>
+        <title>Your Kanban</title>
         <link rel="icon" href="../images/favicon.png">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -42,6 +42,19 @@
                                             <label for="password" class="col-sm-3 control-label">Password</label>
                                             <div class="col-sm-9">
                                                 <input type="password" id="password" name="password" placeholder="Password" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <label class="control-label col-sm-3">Permission</label>
+                                            <div class="col-sm-6">
+                                                <div class="row">
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="userRadio" value="user" name="permission" required>User
+                                                        </label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" id="adminRadio" value="admin" name="permission">Admin
+                                                        </label>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="form-group mb-3">

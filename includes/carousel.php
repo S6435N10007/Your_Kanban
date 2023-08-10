@@ -11,7 +11,7 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="images/slider.jpg" width="1648" height="600" alt="">
+                        <img src="images/slider-01.png" width="1648" height="600" alt="">
                         <div class="carousel-caption">
                             <h2>COSMETICS <b>&</b> BUEATY ACCESSERIES</h2>
                             <h3>FROM OURFAMOUS BRANDS <Span>SALE</Span></h3>
@@ -19,7 +19,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="images/slider.jpg" width="1648" height="600" alt="">
+                        <img src="images/slider-02.png" width="1648" height="600" alt="">
                         <div class="carousel-caption">
                             <h2>COSMETICS <b>&</b> BUEATY ACCESSERIES</h2>
                             <h3>FROM OURFAMOUS BRANDS <Span>SALE</Span></h3>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="item ">
-                        <img src="images/slider.jpg" width="1648" height="600" alt="">
+                        <img src="images/slider-03.png" width="1648" height="600" alt="">
                         <div class="carousel-caption">
                             <h2>COSMETICS <b>&</b> BUEATY ACCESSERIES</h2>
                             <h3>FROM OURFAMOUS BRANDS <Span>SALE</Span></h3>

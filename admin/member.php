@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Koban</title>
+        <title>Your Kanban</title>
         <link rel="icon" href="../images/favicon.png">
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
@@ -37,6 +37,7 @@
                                             <th>Member Surname</th>
                                             <th>E-mail</th>
                                             <th>Tel</th>
+                                            <th>Status</th>
                                             <th>Detail</th>
                                         </tr>
                                     </thead>
@@ -47,13 +48,13 @@
                                             <th>m_surname</th>
                                             <th>m_email</th>
                                             <th>m_tel</th>
+                                            <th>m_status</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php
                                         $sql = "SELECT * 
                                                 FROM tb_member
-                                                WHERE m_status = 'user'
                                                 ORDER BY m_no ASC";
                                         $result = mysqli_query($conn, $sql);
                                         while($row = mysqli_fetch_array($result))
@@ -65,6 +66,7 @@
                                             <td><?php echo $row['m_surname']; ?></td>
                                             <td><?php echo $row['m_email']; ?></td>
                                             <td><?php echo $row['m_tel']; ?></td>
+                                            <td><?php echo $row['m_status']; ?></td>
                                             <td>
                                             <a href="member_detail.php?id=<?php echo $row['m_no']; ?>" class="btn btn-light">Detail</a>
                                             </td>

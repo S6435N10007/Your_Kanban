@@ -9,12 +9,6 @@
     $pic2 = $_FILES['pic2']['name'];
     $pic3 = $_FILES['pic3']['name'];
     include('includes/connect.php');
-    $sqlu = "SELECT count(p_name) FROM tb_product WHERE p_name='$name'" ;
-    $resultu = mysqli_query($conn,$sqlu);
-    if( $resultu > 0 ){
-        echo "<script>alert('Already has this name')</script>";
-        echo "<script>window.location='product.php'</script>";
-    }else{
     if($picmain != "" && $pic2 != "" && $pic3 != ""){
         $sql = "UPDATE tb_product
                 SET p_name='$name',cat_id='$protype',p_detail='$detail',p_price='$price',p_pic_main='$picmain',p_pic_2='$pic2',p_pic_3='$pic3'
@@ -76,6 +70,6 @@
         echo "<script>alert('Update Product Failed')</script>";
         echo "<script>window.location='product.php'</script>";
     }
-}
+
 mysqli_close($conn);
 ?>

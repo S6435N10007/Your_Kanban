@@ -145,7 +145,6 @@
                         <a href="product.php?id=<?php echo $row['p_no'];?>&cat_id=<?php echo $row['cat_id'];?>&page=1">
                             <div class="product-item"><!--Product Begin-->
                                 <img src="admin/product_image/<?php echo $row['p_pic_main'];?>" class="img-responsive" width="255" height="322" alt="">
-                                
                                 <div class="product-title">
                                         <h3><?php echo $row['p_name'];?></h3>
                                         <span><?php echo $row['p_price'];?> ฿</span>
@@ -197,7 +196,7 @@
                 <div class="row">
                     <div class="col-md-12 wow fadeInDown animated ">
                         <h1>END OF SEASON SALE</h1>
-                        <h2>Up to 35% off Women's Denim</h2>
+                        <h2>Up to 35% off</h2>
                     </div>
                 </div>
             </div>
