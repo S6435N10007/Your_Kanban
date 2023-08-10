@@ -22,12 +22,7 @@
   </tr>
   <tr>
     <td>
-      <img src="https://i.ibb.co/BZr76TH/751.png">
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://i.ibb.co/BZr76TH/755.png">
+      <img src="https://i.ibb.co/H7Kfgjg/755.png">
     </td>
   </tr>
 </table>
